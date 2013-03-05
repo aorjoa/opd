@@ -4,12 +4,12 @@ opd
 Project title : Outpatient Department System : OPD System
 Subject : [423303] System Analisis and Design @ Suranaree University of Technology
 Another :
-B5302338  KANOKON CHANSOM
+B5302338	KANOKON CHANSOM
 B5302598	ANUCHIT PRASERTSANG
 B5302666	ALONGKORN CHOTICHAI
-B5304516  BHURIDECH SUDSEE
+B5304516	BHURIDECH SUDSEE
 B5313754	APICHAT EAKWONGSA
-B5319657  THIRAWUTH CHAICHA_UM
+B5319657	THIRAWUTH CHAICHA_UM
 ---------------------------------------------------
 This project devolopement by ZK Grails plug-in with Grails Framework 
 and our setting system for develope environmental mode (drop table when system shutdown ) .
