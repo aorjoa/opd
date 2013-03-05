@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window apply="opd.HistoryComposer" visible="false">
+
+        <vbox align="center" height="90%" width="100%">
+                <image src="${z.resource(dir:'images', file:'Head.png')}"/>
+        </vbox>
+
+        <groupbox>
+            <vbox align="end" height="90%" width="100%">
+                    <groupbox >
+                        <vbox>
+                            <label value="ยินดีต้อนรับ"/>
+                            <hbox spacing="1px">
+                            <label id="lbUser" />
+                            </hbox>
+                            <button id="btnLogout" label="ออกจากระบบ"/>
+                        </vbox> 
+                    </groupbox>
+            </vbox>
+                
+                    <vbox align="center" height="90%" width="100%">
+                        <hbox id = "h1" align="center">
+                            <label value="ชื่อ "/>
+                            <label id="lbName"/>
+                        </hbox>
+                    </vbox>
+                    <separator/>
+                <vbox align="center" height="90%" width="100%">
+                    <grid height="150px" width="410px">  
+                        <columns>                
+                            <column label="หมายเลขใบสั่งยา" align="center" width="110px" />
+                            <column label="รายการยา" align="center"/>
+                        </columns>                           
+                        <rows sclass="narrow">
+                        </rows>         
+                    </grid>
+                    <button id="btnClose" label="ปิด"/>
+                </vbox>
+
+                
+            <vbox id="scaffoldingBox"/>
+        </groupbox>
+
+    </window>
+
+</zk>

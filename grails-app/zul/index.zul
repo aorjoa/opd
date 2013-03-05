@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+<style>
+
+.sdaa{  
+    margin-top:30px;  
+    margin-left:30px;   
+    background-color: #ffb94b;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fddb6f), to(#ffb94b));
+    background-image: -webkit-linear-gradient(top, #fddb6f, #ffb94b);
+    background-image: -moz-linear-gradient(top, #fddb6f, #ffb94b);
+    background-image: -ms-linear-gradient(top, #fddb6f, #ffb94b);
+    background-image: -o-linear-gradient(top, #fddb6f, #ffb94b);
+    background-image: linear-gradient(top, #fddb6f, #ffb94b);
+    
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    
+     -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+     -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+     box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;    
+    
+    border-width: 1px;
+    border-style: solid;
+    border-color: #d69e31 #e3a037 #d5982d #e3a037;
+
+  
+    padding: 0px;
+    width: 120px;
+    cursor: pointer;
+    font: bold 15px Arial, Helvetica;
+    color: #8f5a0a;
+
+
+}
+
+
+
+
+
+.sdaaa
+
+{  
+margin-left:20%;     
+margin-bottom:2px;
+    background-color: #CCFF33;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#99CC33), to(#CCFF33));
+    background-image: -webkit-linear-gradient(top, #99CC33, #CCFF33);
+    background-image: -moz-linear-gradient(top, #99CC33, #CCFF33);
+    background-image: -ms-linear-gradient(top, #99CC33, #CCFF33);
+    background-image: -o-linear-gradient(top, #99CC33, #CCFF33);
+    background-image: linear-gradient(top, #99CC33, #CCFF33);
+    
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    
+     -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+     -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+     box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;    
+    
+    border-width: 1px;
+    border-style: solid;
+    border-color: #99cc33 #99cc33 #99cc33 #99cc33;
+
+    
+    height: 40px;
+    padding: 5px;
+    width: 200px;
+    cursor: pointer;
+    font: bold 15px Arial, Helvetica;
+    color: #8f5a0a;
+}
+
+.sdaaa:hover,.sdaaa:focus
+{       
+    background-color: #99CC33;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#CCFF33), to(#99CC33));
+    background-image: -webkit-linear-gradient(top, #CCFF33, #99CC33);
+    background-image: -moz-linear-gradient(top, #CCFF33, #99CC33);
+    background-image: -ms-linear-gradient(top, #CCFF33, #99CC33);
+    background-image: -o-linear-gradient(top, #CCFF33, #99CC33);
+    background-image: linear-gradient(top, #CCFF33, #99CC33);
+}   
+
+.sdaaa:active
+{       
+    outline: none;
+   
+     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+     -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;        
+}
+
+.sdaaa::-moz-focus-inner
+{
+  border: none;
+}
+
+
+</style>
+    <window apply="opd.IndexComposer">
+
+        <vbox id="main" class="sdaa" width="200px" >
+
+           <label value="ระบบจัดการผู้ป่วยนอก" style="font-size:20px;margin-left:5px;" width="150px" />
+            <label value="OPD System" style="font-size:20px;margin-left:5px;" width="150px" />
+            <button class="sdaaa" src="${z.resource(dir:'images',file:'pic4-01.png')}" id="btn1" label="Register System >>" href="/registers/login.zul" />
+            <button src="${z.resource(dir:'images',file:'pic1-01.png')}" class="sdaaa" id="screening" label="Screening System >>" href="/screening/screening.zul"/>
+               <button src="${z.resource(dir:'images',file:'pic6-01.png')}" class="sdaaa" id="doctor" label="Doctor System >>" href="/doctor/doctor.zul" />
+                  <button src="${z.resource(dir:'images',file:'pic7-01.png')}" class="sdaaa" id="transfer" label="Transfer System >>" href="/transfer/logintransfer.zul"/>
+                     <button src="${z.resource(dir:'images',file:'pic8-01.png')}" class="sdaaa" id="medicine" label="Medicine System >>" href="/medicine/medicineLogin.zul"/>
+                        <button src="${z.resource(dir:'images',file:'pic10-01-01.png')}" class="sdaaa" id="finance" label="Finance System >>" href="/finance/pricelogin.zul"/>
+        </vbox>
+
+
+            
+    </window>
+
+</zk>

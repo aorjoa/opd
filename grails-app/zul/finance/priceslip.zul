@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window apply="opd.PriceslipComposer">
+        <hbox>
+            <separator/><separator/><separator/><separator/><separator/>
+            <separator/><separator/><separator/><separator/><separator/>
+            <separator/><separator/><separator/><separator/><separator/>
+            <separator/><separator/><separator/><separator/><separator/>
+            <separator/><separator/><separator/><separator/><separator/>
+            <separator/><separator/><separator/><separator/><separator/>
+            <separator/><separator/><separator/><separator/><separator/>
+            <separator/><separator/><separator/><separator/><separator/>
+            <separator/><separator/><separator/><separator/><separator/>
+            <separator/><separator/><separator/><separator/><separator/>
+            <separator/><separator/><separator/><separator/><separator/>
+            <separator/><separator/><separator/><separator/><separator/>
+            <vbox>
+                <label style="font-size:40px"> เอกสารการจ่ายเงิน</label>
+                <hbox>
+                    <vbox>
+                        
+                        <label style="font-size:20px">ชื่อ/Name:</label>
+                        <label style="font-size:20px">เบอร์โทรเจ้าหน้าที่/Tel:</label>
+                        <label style="font-size:20px">วันที่ชำระเงิน:</label>
+
+                    </vbox>
+
+                    <vbox>
+                        <label id="name" style="font-size:20px"></label>
+                        <label id="tel" style="font-size:20px"></label>
+                        <label id="date" style="font-size:20px"> </label>
+                    </vbox>
+                </hbox>
+                ------------------------------------------------------------------------
+                <hbox>
+                    <vbox>
+                        <label style="font-size:20px">ค่ายา</label>
+                        <label style="font-size:20px">ค่า Lab</label>
+                        <label style="font-size:20px">ค่า X-ray</label>
+                        <label style="font-size:20px">ค่า แพทย์ผู้รักษา</label>
+                        <label style="font-size:20px">รวมเป็นเงิน</label>
+                    </vbox>
+                    <vbox>
+                        <label id="Ya" style="font-size:20px"></label>
+                        <label id="lab" style="font-size:20px"></label>
+                        <label id="Xray" style="font-size:20px"></label>
+                        <label id="pat" style="font-size:20px"></label>
+                        <label id="sum" style="font-size:20px"></label>
+                    </vbox>
+
+                </hbox>
+                --------------------------------------------------------------------------
+                <hbox>
+                    <vbox>
+                        <label style="font-size:20px">ลงชื่อ ผู้จ่ายเงิน....................................</label>
+                        <label style="font-size:20px">ขื่อ...........................................</label>
+                    </vbox>
+
+                </hbox>
+                <separator/>
+                <separator/>
+                <vbox align="center">
+                    <button id="btnBack" label="เสร็จสิ้น"/>
+                </vbox>
+            </vbox>
+        </hbox>
+       
+
+    </window>
+
+</zk>

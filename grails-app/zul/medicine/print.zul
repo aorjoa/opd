@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window apply="opd.PrintComposer" visible="false">
+
+        <vbox align="center" height="90%" width="100%">
+            <image src="${z.resource(dir:'images', file:'Head.png')}"/>
+        </vbox>
+        <groupbox>
+            <vbox align="end" height="90%" width="100%">
+                    <groupbox >
+                        <vbox>
+                            <label value="ยินดีต้อนรับ"/>
+                            <hbox spacing="1px">
+                            <label id="lbUser" />
+                            </hbox>
+                            <button id="btnLogout" label="ออกจากระบบ"/>
+                        </vbox> 
+                    </groupbox>
+            </vbox>
+                <vbox align="center" pack="center" height="90%" width="100%">
+                    <separator/>
+                    <separator/>
+                    
+                    <groupbox id="gb">
+                        <caption label="Sticker"/>
+                            <groupbox>
+                                <vbox>
+                                    <label value="โรงพยาบาลกลุ่มสาม"/>
+                                    <hbox>
+                                        <vbox>
+                                            <hbox align="center">
+                                                <label value="ชื่อผู้ป่วย : "/>
+                                                <label id="lbName" />
+                                            </hbox>
+                                            <hbox align="center">
+                                                <label value="ชื่อยา : "/>
+                                                <label id="lbMedName"/>
+                                            </hbox>
+                                            <hbox align="center">
+                                                <label value="คุณสมบัติ : "/>
+                                                <textbox />
+                                            </hbox>
+                                            <hbox >
+                                                <label value="ข้อควรปฏิบัติ : "/>
+                                                <textbox rows="5" height="50px" width="150px"/>
+                                            </hbox>
+                                            <hbox align="center">
+                                                <label value="แพทย์ผู้ทำการสั่งยา : "/>
+                                                <label id="lbDocName" />
+                                            </hbox>
+                                            <hbox align="center">
+                                                <label value="เภสัชกรผู้จ่ายยา : "/>
+                                                <textbox id="txtPhar" />
+                                            </hbox>
+                                        </vbox>
+                                    </hbox>
+                                </vbox>
+                            </groupbox>
+                            <vbox align="end" width="100%">    
+                                <hbox align="center">
+                                    <button id="btnPrint" label="พิมพ์Sticker"/>
+                                    <button id="btnCancle" label="Cancle"/>
+                                </hbox>
+                            </vbox>
+                    </groupbox>
+                </vbox>
+            <vbox id="scaffoldingBox"/>
+        </groupbox>
+
+
+    </window>
+
+</zk>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window apply="opd.PriceComposer" visible="false">
+
+        <vbox align="center" height="90%" width="100%">
+                <image src="${z.resource(dir:'images', file:'Head.png')}"/>
+        </vbox>
+
+        <groupbox>
+            <vbox align="end" height="90%" width="100%">
+                    <groupbox >
+                        <vbox>
+                            <label value="ยินดีต้อนรับ"/>
+                            <hbox spacing="1px">
+                            <label id="lbUser" />
+                            </hbox>
+                            <button id="btnLogout" label="ออกจากระบบ"/>
+                        </vbox> 
+                    </groupbox>
+            </vbox>
+                <vbox align="center" height="90%" width="100%">
+                    <vbox align="center" height="90%" width="100%">
+                        <hbox id = "h1" align="center">
+                            <label value="ชื่อ "/>
+                            <label id="lbName"/>
+                            
+                        </hbox>
+                    </vbox>
+                    <separator/>
+                    <vbox align="center" height="90%" width="100%">
+                        <grid height="150px" width="510px">  
+                            <columns>                
+                                <column label="ชื่อยา" align="center" width="270px" />
+                                <column label="ราคา/หน่วย" align="center" width="80px"/>
+                                <column label="จำนวน" align="center" width="70px"/>
+                                <column label="รวม" align="center" />
+                            </columns>                           
+                                <rows sclass="narrow">
+                                    
+                                </rows>         
+                        </grid>
+                        <vbox align="end" height="90%" width="100%">
+                            <hbox align="center" width="150px">
+                                <button id="btnSum" label="รวมทั้งสิ้น "/>
+                                <label id="txtPrice"/>
+                            </hbox>
+                            <hbox>
+                                <button id="btnSavePrice" label="บันทึก"/>
+                                <button id="btnBack" label="ย้อนกลับ"/>
+                            </hbox>
+                        </vbox>    
+                    </vbox>
+                </vbox>
+                
+            <vbox id="scaffoldingBox"/>
+        </groupbox>
+
+    </window>
+
+</zk>

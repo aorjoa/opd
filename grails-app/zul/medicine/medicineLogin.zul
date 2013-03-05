@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window apply="opd.MedicineLoginComposer" visible="false">
+
+        <vbox align="center" height="90%" width="100%">
+            <image src="${z.resource(dir:'images', file:'Head.png')}"/>
+        </vbox>
+        <groupbox>
+            <vbox align="center" height="90%" width="100%">
+                    <label value="ยินดีต้อนรับ" style="font-size:4em;"/>
+            </vbox>
+                <vbox align="center" pack="center" height="90%" width="100%">
+                    <separator/>
+                    <separator/>
+                    <groupbox>
+                        <caption label="Login"/>
+                                    <hbox>
+                                        <label value="Username:" style="font-size:1.5em;"/>
+                                        <textbox id="txtUser" style="font-size:1.1em;"/>
+                                    </hbox>
+                                    <hbox>
+                                        <label value="Password:" style="font-size:1.5em;"/>
+                                        <textbox id="txtPass" type="password" style="font-size:1.1em;"/>
+                                    </hbox>
+                                    <vbox align="center" pack="center" height="90%" width="100%">
+                                        <button id="login" label="Login"/>
+                                    </vbox>
+                                
+                    </groupbox>
+                </vbox>
+            <vbox id="scaffoldingBox"/>
+        </groupbox>
+    </window>
+
+</zk>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window apply="opd.LoginFinanceComposer">
+
+        <hbox align="center">
+            <image src="${z.resource(dir:'images', file:'zkpowered_s.png')}"/>
+            <image src="${z.resource(dir:'images', file:'grails_logo.png')}"/>
+        </hbox>
+
+        <borderlayout sclass="complex-layout" height="450px">
+                        <north size="50px" border="0">
+                                
+                            <div style="float:right">
+                                <label>กรุณา Log in</label>
+                            </div>
+                                           
+                               
+                        </north>
+                        <west width="500px">
+                            <image src="${z.resource(dir:'images', file:'SA2.jpg')}"/>
+                            
+                            
+                            
+                        </west>
+                        <east width="225px" title="ปฏิทิน">
+                            <vbox>
+                                <calendar id="cal" onChange="in.value = cal.value" />
+                                
+                            </vbox>                                                 
+                        </east>
+                        <center>
+                            
+                                <vbox>
+                                    <separator/><separator/><separator/><separator/><separator/>
+                                    <separator/><separator/><separator/><separator/><separator/>
+                                    <hbox>
+                                        <separator/><separator/><separator/><separator/><separator/>
+                                        <separator/><separator/><separator/><separator/><separator/>
+                                        <separator/><separator/><separator/><separator/><separator/>
+                                        กรุณากรอก User และ Password
+                                    </hbox>
+                                    <separator/><separator/>
+                                    <hbox>
+                                        <separator/><separator/><separator/><separator/><separator/>
+                                        <separator/><separator/><separator/><separator/><separator/>
+                                        <separator/><separator/><separator/><separator/><separator/>
+                                        User<textbox id="user"/>
+                                    </hbox>
+                                    <separator/><separator/>
+                                    <hbox>
+                                        <separator/><separator/><separator/><separator/><separator/>
+                                        <separator/><separator/><separator/><separator/><separator/>
+                                        <separator/><separator/><separator/><separator/><separator/>
+                                        Pass<textbox id="pass" type="password"/>
+                                    </hbox>
+                                    <separator/><separator/>
+                                    <hbox>
+                                        <separator/><separator/><separator/><separator/><separator/> 
+                                        <separator/><separator/><separator/><separator/><separator/>
+                                        <separator/><separator/><separator/><separator/><separator/>
+                                        <button id="login" label="Log in"/>
+                                        <separator/><separator/><separator/><separator/><separator/>
+                                        <button id="clear" label="Clear"/>
+                                    </hbox>
+                                    
+                                </vbox>
+                            
+                        
+                        </center>
+        </borderlayout>
+
+    </window>
+
+</zk>

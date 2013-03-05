@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window>
+     <hbox>
+     <separator width="300px"/>
+        <vbox>
+        <separator width="50px"/>
+       <window apply="opd.LogingScreeningComposer" title="Login" zclass="z-window-overlapped" border="normal" width="270px" visible="false"> 
+            <hbox>
+            <vbox>
+             <groupbox id="Patient" width="247px"  >
+                <vbox height="170px" align="center">
+                    <hbox >
+                       <vbox width="80px" align="right">
+                            <separator/>
+                            <vbox height="36px" align="center">
+                             User
+                             </vbox>
+                       
+                          <vbox height="36px" align="center">
+                            Password
+                            </vbox> 
+                        
+
+
+                        </vbox>
+                        <vbox>
+                            <separator/>
+                            <textbox id="username"/>
+                            <separator/>
+                            <textbox id="password"  type="password" />
+                           <separator/>
+                          <button id="login" label="Login"  width="70px"  height="40px"/>
+                           
+                        </vbox>
+
+                    </hbox>
+
+                </vbox>
+                </groupbox >
+            </vbox>
+            </hbox>
+        
+        </window>
+        </vbox>
+      </hbox>      
+    </window>
+
+</zk>

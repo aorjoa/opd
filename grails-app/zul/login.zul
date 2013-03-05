@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window apply="opd.LoginComposer" visible="false">
+        <vbox>
+           <label value="UserName" width="150px" />
+                    <hlayout>
+                        <textbox id="username" value="" width="150px" tabindex="1" />
+                    </hlayout>
+            <label value="Password" width="150px" />
+                    <hlayout>
+                       <textbox id="password" type="password" value="" width="150px" tabindex="2" />
+                    </hlayout>
+            <checkbox label="Remember me"/>
+                <button id="login" label="Login >>" width="80px" height="30px" />
+        </vbox>
+    </window>
+
+</zk>

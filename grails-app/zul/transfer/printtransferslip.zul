@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window apply="opd.PrinttransferslipComposer">
+
+       <label style="font-size:20px"> Transfer Slip</label>
+        <hbox>
+
+        <vbox>
+            
+            <label>ชื่อ/Name:</label>
+            <label>โทร/Tel:</label>
+            <label>แพทย์ผู้ส่งตัว:</label>
+            
+
+        </vbox>
+
+        <vbox>
+            <label id="name" style="color:blue !important;"></label>
+            <label id="tel" style="color:blue !important;"></label>
+            <label id="dtransfer" style="color:blue !important;"></label>
+
+            <label></label>
+        </vbox>
+
+        <vbox>
+            <label>เลขที่บัตรประชาชน:</label>
+            <label>วันที่ เวลา/Date Time:</label>
+            
+        </vbox>
+
+        <vbox>
+            
+            <label id="idcard" style="color:blue !important;"></label>
+            <label id="timetransfer" style="color:blue !important;"></label>
+        </vbox>
+    </hbox>
+    
+   
+
+    <label>___________________________________________________________________________________________</label>
+<hbox>
+<vbox>
+    <vbox>
+        <label></label>
+         <label>ประวัติการรักษา/Treatment history:</label>
+         <label id="diagnose" style="color:blue !important;"></label>
+    </vbox>
+    <label></label>
+    <vbox>
+        <label></label>
+         <label>หมายเหตุ/Comment:</label>
+         <label id="comment" style="color:blue !important;" ></label>
+    </vbox>
+</vbox>
+<space/><space/><space/><space/><space/><space/><space/><space/>
+<vbox>
+    <label>ประเภทการส่งตัว</label>
+    <hbox>
+        <label>ภายในโรงพยาบาล</label>
+        <vbox>
+            <hbox>
+                <label>ส่งไป/Send:</label>
+                <label id="type" style="color:blue !important;" ></label> 
+            </hbox>
+        </vbox>
+    </hbox>
+    <hbox> 
+        <vbox>
+            
+        </vbox>
+        
+    </hbox>
+</vbox>
+</hbox>
+
+    </window>
+
+</zk>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window apply="opd.SearchPrescriptionComposer" visible="false">
+
+        <vbox align="center" height="90%" width="100%">
+                <image src="${z.resource(dir:'images', file:'Head.png')}"/>
+            </vbox>
+       
+        <groupbox>
+            <vbox align="end" height="90%" width="100%">
+                    <groupbox >
+                        <vbox>
+                            <label value="ยินดีต้อนรับ"/>
+                            <hbox spacing="1px">
+                            <label id="lbUser" />
+                            </hbox>
+                            <button id="btnLogout" label="ออกจากระบบ"/>
+                        </vbox> 
+                    </groupbox>
+            </vbox>
+                <vbox align="center" pack="center" height="90%" width="100%">
+                    <separator/>
+                    <separator/>
+                    <groupbox width="250px">
+                        <caption label="ค้นหา"/>
+                            <hbox>
+                                    <label value="ค้นหา"/>
+                                    <textbox id="txtSearch"/>
+                                    <button id="btnSearch" label="ค้นหา"/>
+                            </hbox>
+                    </groupbox>            
+                    <separator/>
+                    <grid height="150px" width="610px">  
+                        <columns>
+                            <column label="ใบสั่งยา" align="center" width="100px" />                
+                            <column label="ชื่อผู้ป่วย" align="center" width="200px" />
+                            <column label="การสั่งยา" align="center" width="200px"/>
+                            <column label="รายละเอียด" align="center"/>
+                        </columns>                           
+                            <rows sclass="narrow">
+                                
+                            </rows>         
+                    </grid>
+                </vbox>
+                
+            <vbox id="scaffoldingBox"/>
+        </groupbox>
+    </window>
+
+</zk>

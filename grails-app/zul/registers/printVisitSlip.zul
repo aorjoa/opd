@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window apply="opd.PrintVisitSlipComposer">
+
+        <label style="font-size:20px"> Visit Slip</label>
+        <hbox>
+
+        <vbox>
+            
+            <label>ชื่อ/Name:</label>
+            <label>อายุ/Age:</label>
+            <label>โทร/Tel:</label>
+            <label>คู่สัญญา/Payor:</label>
+            <label>อาการสำคัญ:</label>
+
+        </vbox>
+
+        <vbox>
+            <label id="name"></label>
+            <label id="age"></label>
+            <label id="tel"></label>
+            <label id="status"></label>
+            <label id="symptom"></label>
+            <label></label>
+        </vbox>
+
+        <vbox>
+            <label>วันเดือนปี เกิด/Birth Date:</label>
+            <label>เลขที่บัตรประชาชน:</label>
+            <label>วันที่ เวลา/Date Time:</label>
+            
+            <label>แพทย์เจ้าของไข้/Main Doctor:</label>
+            <label>แผนก/Department:</label>
+        </vbox>
+
+        <vbox>
+            <label id="birthday">11/09/2534</label>
+            <label id="idcard">1234567891224:</label>
+            <label id="time">02/10/2555 15:10</label>
+        </vbox>
+    </hbox>
+    
+    <hbox>
+        <vbox>
+            <checkbox label="ต้องการใบรับรองแพทย์ / Medcertificate"/>
+            <checkbox label="อื่นๆ....................................................."/>
+        </vbox>
+        <vbox>
+            <checkbox label="ไม่มีประวัติแพ้ยา"/>
+            <checkbox label="สงสัยแพ้ยา / มีประวัติแพ้ยา"/>
+            <checkbox label="ประวัติโรคประจำตัว"/>
+        </vbox>
+    </hbox>
+
+    <label>___________________________________________________________________________________________</label>
+<hbox>
+<vbox>
+    <vbox>
+        <label></label>
+        <checkbox label="รอผล LAB"/>
+        <checkbox label="รอผล X-RAY"/>
+        <label>FU............................................แพทย์...........................................</label>
+        <label>CHECKUP</label>
+        <label>แพทย์ PE ........................</label>
+        <label>แพทย์ PV ........................</label>
+    </vbox>
+    <label></label>
+    <hbox>
+    <label>BW.......kgs</label>
+    <label>HT.......cms</label>
+    <label>T.......C</label>
+    <label>BP.......mmHg</label>
+    <label>PR.......ครั้ง/min</label>
+    <label>RR.......ครั้ง/min</label>
+    </hbox>
+</vbox>
+
+<vbox>
+    <label>ใน 6 เดือนที่ผ่านมามีการใช้ยากลุ่มนี้หรือไม่</label>
+    <hbox>
+        <checkbox label="กลุ่มยาซัลฟา"/>
+        <vbox>
+            <checkbox label="Co-trimoxazole"/>
+            <checkbox label="Salazopyrin"/>
+        </vbox>
+    </hbox>
+    <hbox>
+        <checkbox label="กลุ่มยากันชัก"/>
+        <vbox>
+            <checkbox label="Carbamazepine"/>
+            <checkbox label="Phenobarbital"/>
+            <checkbox label="Phenytoin"/>
+        </vbox>
+    </hbox>
+    <hbox>
+        <checkbox label="กลุ่มยาต้านไวรัส"/>
+        <vbox>
+            <checkbox label="GPO-Vir"/>
+            <checkbox label="Nevirapine"/>
+            <checkbox label="Efavirenz"/>
+        </vbox>
+    </hbox>
+    <hbox>
+        <checkbox label="กลุ่มยาโรคเก๊าท์"/>
+        <vbox>
+            <checkbox label="Allopurinol"/>
+        </vbox>
+    </hbox>
+    <hbox>
+        <checkbox label="ไม่ใช้"/>
+    </hbox>
+
+<label></label><label></label>
+    <vbox>
+        <label>.................................</label>
+        <label>(ผู้รับบริการ)</label>
+    </vbox>
+</vbox>
+</hbox>
+<button id="cancel" label="Cancel" width="80px" height="30px" /> 
+
+    </window>
+
+</zk>

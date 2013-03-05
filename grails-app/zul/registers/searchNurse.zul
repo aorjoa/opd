@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window apply="opd.SearchNurseComposer" visible="false">
+       <vbox>
+            <label style="font-size:20px">ระบบลงทะเบียนผู้ป่วยนอก</label>
+            <label style="font-size:20px">จัดการข้อมูลพยาบาล</label>
+            <hbox>
+                <label style="font-size:14px">สถานะ  : เข้าใข้ระบบ</label>
+                <label id="logonName" style="font-size:14px"></label>
+                <label id="today" style="font-size:14px"></label>
+                <button id="logout">ออกจากระบบ</button>
+            </hbox>
+            <label></label>
+            <hbox>
+             <label style="font-size:14px">เพิ่มข้อมูลพยาบาล</label>
+            <button href="/registers/createNurse.zul">Add Nurse</button>
+        </hbox>
+        <label></label>
+        </vbox>
+        <vbox>
+            <hbox><textbox id="searchText" /> <button id="btnSearch" label="Search" /></hbox>
+            <label></label>
+        </vbox>
+
+        <grid>
+        <auxhead>
+            <auxheader colspan="5" label="ผลการค้นหารายชื่อพยาบาล" />
+        </auxhead>
+        <columns>
+            <column hflex="1">ลำดับ</column>
+            <column hflex="5">username</column>
+            <column hflex="6">ชื่อ</column>
+            <column hflex="6">นามสกุล</column>
+            <column hflex="3">แก้ไข/ลบ</column>
+        </columns>
+        <rows id="gridRows" sclass="narrow">
+        </rows>
+    </grid>
+
+    </window>
+
+</zk>

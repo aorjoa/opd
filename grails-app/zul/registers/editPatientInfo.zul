@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window apply="opd.EditPatientInfoComposer" visible="false">
+
+        <vbox>
+            <label style="font-size:20px">ระบบลงทะเบียนผู้ป่วยนอก</label>
+            <label style="font-size:20px">บันทึกอาการผู้ป่วย</label>
+
+        <hbox>
+            <label style="font-size:14px">สถานะ  : เข้าใข้ระบบ</label>
+            <label id="logonName" style="font-size:14px"></label>
+            <label id="today" style="font-size:14px"></label>            
+            <button id="logout" tabindex="20">ออกจากระบบ</button>
+        </hbox>
+        <label></label>
+        </vbox>
+
+        <hbox>
+        
+            <vbox>
+                <hbox>
+                    <label value="Name" width="150px" />
+                    <textbox id="firstname" width="150px" tabindex="1"/>
+                </hbox>
+            
+                <hbox>
+                    <label value="Sex" width="150px" />
+                    <radiogroup id="sex" />
+                    <radio id="male" label="Male" radiogroup="sex" tabindex="4"/>   
+                    <radio id="female" label="Female" radiogroup="sex" tabindex="5"/>  
+                </hbox>
+                
+                <hbox>
+                    <label value="Race" width="150px" />
+                    <textbox id="race" width="150px" tabindex="8"/>
+                </hbox>
+                <vbox>
+                    <label value="อาชีพ" width="150px" />
+                    <combobox id="work" width="150px" tabindex="11">
+                        <comboitem label="Student" />
+                        <comboitem label="Teacher"/>
+                        <comboitem label="Officer"/>
+                    </combobox>
+                </vbox>
+            </vbox>
+        
+
+        
+            <vbox>
+                <hbox>
+                    <label value="Lastname" width="150px" />
+                    <textbox id="lastname" width="150px" tabindex="2"/>
+                </hbox>
+                <hbox align="center">
+                    <label value="Birthday" width="150px" />
+                    <datebox id="birthday" width="150px" tabindex="6"/>
+                </hbox>
+                <hbox>
+                    <label value="Nationality" width="150px" />
+                    <textbox id="nationality" tabindex="9"/>
+                </hbox>
+                <vbox>  
+                <label value="สิทธิ์การเบิก" width="150px" />  
+                <radiogroup id="welfare"/>
+                    <radio label="ชำระเงินเอง" radiogroup="welfare" tabindex="12"/>   
+                    <radio label="บัตรประกันสุขภาพถ้วนหน้า" radiogroup="welfare" tabindex="13"/> 
+                    <radio label="ข้าราชการ" radiogroup="welfare" tabindex="14"/>   
+                    <radio label="นักศึกษา" radiogroup="welfare" tabindex="15"/>  
+                </vbox>
+            </vbox>
+ 
+            <vbox>
+                <hbox>
+                    <label value="ID card" width="150px" />
+                    <textbox id="idcard" width="150px" tabindex="3"/>
+                </hbox>
+                <hbox>
+                    <label value="เบอร์ติดต่อ" width="150px" />
+                    <textbox id="tel" width="150px" tabindex="7"/>
+                </hbox>
+                <hbox>
+                    <label value="Religion" width="150px" />
+                    <textbox id="religion" width="150px" tabindex="10"/>
+                </hbox>  
+                  
+                <vbox>  
+                    <label value="ประวัติการแพ้ยา" width="150px" />     
+                    <hbox>
+                        <radiogroup id="allergic"/>
+                            <radio label="ไม่มีประวัติการแพ้ยา" radiogroup="allergic" tabindex="16"/>
+                            <radio label="สงสัยว่าแพ้ยา" radiogroup="allergic" tabindex="17"/> 
+                            <radio label="แพ้ยา" radiogroup="allergic" tabindex="18"/> 
+                    </hbox>
+                </vbox>
+            </vbox>
+        </hbox>
+        <button id="save" label="บันทึก" width="80px" height="30px" tabindex="19"/>
+    </window>
+
+</zk>

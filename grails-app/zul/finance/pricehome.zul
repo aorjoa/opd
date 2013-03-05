@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window apply="opd.PricehomeComposer">
+
+        <hbox align="center">
+            <image src="${z.resource(dir:'images', file:'zkpowered_s.png')}"/>
+            <image src="${z.resource(dir:'images', file:'grails_logo.png')}"/>
+        </hbox>
+
+        <borderlayout sclass="complex-layout" height="600px">
+                        <north size="50px" border="0">
+                                
+                            <div style="float:right">
+                                <label>ชื่อผู้ Login</label>
+                                <textbox id="nameBuncee" style="color:blue !important;" disabled="true"/>
+                                <label id="today"></label>
+                                <button id="logOut" label="ออกจากระบบ"/>
+                            </div>
+                                           
+                               
+                        </north>
+                        <west width="200px" title="ระบบการเงิน------>">   
+                            <image src="${z.resource(dir:'images', file:'SA3.jpg')}"/>
+                            
+                            
+                        </west>
+                        <east width="225px" title="ปฎิทิน">
+                            <vbox>
+                                <calendar id="cal" />
+                                
+                            </vbox>                                                 
+                        </east>
+                        <center>
+                            <tabbox id="tb" height="550px">
+                                <tabs id="tabs">
+                                    <tab id="A" label="ค้นหาข้อมูลผู้ป่วย" />
+                                    <tab id="B" disabled="true" label="รายละเอียดค่าใช้จ่าย" />
+                                    <tab id="C" label="บัญทึกการเงิน"/>
+                                </tabs>
+                                <tabpanels>
+                                                <tabpanel>
+                                                    <borderlayout sclass="complex" height="530px">
+                                                    
+                                                            <north size="25px" border="0">
+                                                        
+                                                            </north>
+                                                        
+                                                            <west width="50%" title="ค้นหารายชื่อผู้ป่วยที่มาชำระค่าบริการ">
+                                                                
+                                                                <vbox>
+                                                                    <separator/><separator/><separator/>
+                                                                    <hbox>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        
+                                                                        <label>กรุณากรอกเลขประจำตัวประชาชนผู้ป่วย</label>
+                                                                    </hbox>
+                                                                    <separator/><separator/><separator/>
+                                                                    <separator/><separator/><separator/>
+                                                                    <hbox>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <label>เลขประจำตัวประชาชน</label>
+                                                                        <textbox id="numberNamePoopuy1"/>                                                                                                                                   
+                                                                    </hbox>
+                                                                    <separator/><separator/><separator/>
+                                                                    <hbox>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <button id="searchPoopuy" label="ค้นหารายชื่อผู้ป่วย"/>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <button id="clear" label="Clear"/>
+                                                                    </hbox>
+                                                                    <separator/><separator/><separator/>                                                                                                                            
+                                                                </vbox>
+                                                                
+                                                            </west>
+                                                        
+                                                            <east width="50%" title="ผลการค้นหา">
+                                                                <vbox>
+                                                                <separator/><separator/><separator/>
+                                                                    <hbox>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <separator/><separator/><separator/><separator/><separator/>                                                                        
+                                                                        <label>ชื่อ </label>
+                                                                        <textbox id="namePoopuy" style="color:blue !important;" disabled="true"/>
+                                                                        <label>สกุล</label>
+                                                                        <textbox id="lastnamePoopuy" style="color:blue !important;" disabled="true"/>
+                                                                    </hbox>
+                                                                    <separator/><separator/><separator/>                                                                    
+                                                                    <hbox>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <label>เลขประจำตัวประชาชน</label>
+                                                                        <textbox id="numberNamePoopuy2" style="color:blue !important;" disabled="true"/>                                                                                                                                    
+                                                                    </hbox>
+                                                                    <separator/><separator/><separator/>                                                                    
+                                                                    <hbox>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <label>สิทธิ์การรักษา</label>
+                                                                        <textbox id="numberPakunsungkom" style="color:blue !important;" disabled="true"/>                                                                                                                                   
+                                                                    </hbox>
+                                                                    <separator/><separator/><separator/>
+                                                                    <hbox>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <button id="searchMonyPoopuy" label="รายละเอียดค่าใช้จ่าย"/>                                                                    
+                                                                    </hbox>
+                                                                </vbox>                                                                                                                                                                         
+                                                            </east>
+                                                    </borderlayout>
+                                                </tabpanel>
+                                                <tabpanel>
+                                                
+                                                    <borderlayout sclass="complex" height="530px">
+                                                    
+                                                            <north size="25px" border="0">
+                                                        
+                                                            </north>
+                                                        
+                                                            <west width="50%" title="รายการค่าใช้จ่ายต่างๆที่เกี่ยวข้องกับการรักษา">
+                                                                <vbox>
+                                                                    <separator/><separator/><separator/><separator/><separator/>
+                                                                    <hbox>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <checkbox id="lab" label="Lab 1000 บาท" disabled="true"/>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <checkbox id="xray" label="X-ray 500 บาท" disabled="true"/>
+                                                                    </hbox>
+                                                                    <separator/><separator/><separator/><separator/><separator/>
+                                                                    <hbox>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <groupbox width="300px" height="200px" title="ยา">
+                                                                            <vbox>
+                                                                                <separator/><separator/>
+                                                                                <hbox>
+                                                                                    <separator/><separator/><separator/><separator/><separator/>
+                                                                                    <label>หมายเลขกำกับยา</label>                                                                                                                                                                   
+                                                                                </hbox>
+                                                                                <hbox>
+                                                                                    <separator/><separator/><separator/><separator/><separator/>
+                                                                                    <textbox id="Ya" style="color:blue !important;" disabled="true" width="200px" height="50px"/>                                                                                                                                                                   
+                                                                                </hbox>
+                                                                                <separator/><separator/>
+                                                                                <hbox>
+                                                                                    <separator/><separator/><separator/><separator/><separator/>
+                                                                                    <label>ราคา</label>
+                                                                                    <textbox id="moneyYa" style="color:blue !important;" disabled="true" width="50px"/>
+                                                                                    <label>บาท</label>
+                                                                                </hbox>
+                                                                            </vbox>
+                                                                        </groupbox>
+                                                                    </hbox>
+                                                                </vbox>
+                                                            </west>
+                                                        
+                                                            <east width="50%">
+                                                                <vbox>
+                                                                    <separator/><separator/><separator/><separator/><separator/>
+                                                                    <hbox>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <hbox>
+                                                                            <groupbox width="300px" height="200px" title="แพทย์ผู้รักษา">
+                                                                                <vbox>
+                                                                                    <separator/><separator/>
+                                                                                    <hbox>
+                                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                                        <label>ชื่อแพทย์ผู้ตรวจรักษา</label>    
+                                                                                        <textbox id="nameDoctor" style="color:blue !important;" disabled="true"/>
+                                                                                    </hbox>
+                                                                                    <separator/><separator/>
+                                                                                   
+                                                                                    <hbox>
+                                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                                        <label>ค่าตรวจรักษา</label>
+                                                                                        <textbox id="moneyDoctor" style="color:blue !important;" disabled="true" width="50px"/>
+                                                                                        <label>บาท</label>
+                                                                                    </hbox>
+                                                                                </vbox>
+                                                                            </groupbox>
+                                                                        </hbox>
+                                                                    </hbox>
+                                                                        <separator/><separator/>
+                                                                    <hbox>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <label>ยอดค่าใช่จ่ายรวมทั้งหมด</label>
+                                                                        <textbox id="moneySum" style="color:blue !important;" disabled="true" width="50px"/>
+                                                                        <label>บาท</label>
+                                                                    </hbox>
+                                                                        <separator/><separator/>
+                                                                    <hbox>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <label>ชื่อผู้รับเงิน</label>
+                                                                        <textbox id="IDnamePanuknan" style="color:blue !important;" disabled="true"/>                                                                       
+                                                                    </hbox>
+                                                                        <separator/><separator/>    
+                                                                    <hbox>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <button id="saveData" label = "Save" image="${z.resource(dir:'images', file:'save.png')}"/>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <button id="printData" label="พิมม์ใบเสร็จ" image="${z.resource(dir:'images', file:'printer.png')}"/>
+                                                                    </hbox>
+                                                                </vbox>                                                                                                                                                                     
+                                                            </east>
+                                                    </borderlayout>
+                                                
+                                                </tabpanel>
+                                                <tabpanel>
+                                                    <vbox>
+                                                        <separator/><separator/><separator/>
+                                                        <hbox>                                                                                                                  
+                                                            <grid height="200px">
+                                                                <auxhead>
+                                                                    <auxheader colspan="4" label="ตารางการรับเงิน" />
+                                                                </auxhead>
+                                                                <columns>
+                                                                    <column hflex="3">วันที่</column>
+                                                                    <column hflex="3">ชื่อผู้รับเงิน</column>
+                                                                    <column hflex="3">ผู้จ่ายเงิน</column>
+                                                                    <column hflex="3">จำนวนเงิน</column>
+                                                                    <column hflex="3">เบอร์โทรศัพท์ผู้ป่วย</column>
+                                                                </columns>
+                                                                <rows sclass="narrow">
+                                                    
+                                                                </rows>
+                                                            </grid>
+                                                        </hbox>
+                                                            <separator/><separator/><separator/>
+                                                        <hbox>
+                                                            <separator/><separator/><separator/><separator/><separator/>
+                                                            <vbox>
+                                                                <label>User พนักงานบัญชี</label>
+                                                                <separator/>
+                                                                <textbox id="IDPnuknanSearch" style="color:blue !important;" disabled="true"/>
+                                                                <separator/>
+                                                        
+                                                            </vbox>
+                                                            <separator/><separator/><separator/><separator/><separator/>
+                                                            <separator/><separator/><separator/><separator/><separator/>
+                                                            <separator/><separator/><separator/><separator/><separator/>
+                                                            <groupbox width="500px" height="200px" title="ข้อมูลพนักงาน">
+                                                                <vbox>
+                                                                    <separator/><separator/>
+                                                                    <hbox>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <label>ชื่อ</label>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <separator/><separator/>
+                                                                        <textbox id="namePanukngan" style="color:blue !important;" disabled="true" width="150px"/>                                                                      
+                                                                    </hbox> 
+                                                                    <separator/><separator/>
+                                                                    <hbox>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <label>ที่อยู่</label>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <textbox id="livePanukngan" style="color:blue !important;" disabled="true" width="350px"/>                                                                      
+                                                                    </hbox>
+                                                                    <separator/><separator/>
+                                                                    <hbox>
+                                                                        <separator/><separator/><separator/><separator/><separator/>
+                                                                        <label>หมายเลขโทรศัพท์</label>
+                                                                        <separator/><separator/><separator/>
+                                                                        <textbox id="telePhPanukngan" style="color:blue !important;" width="150px" disabled="true"/>    
+                                                                    </hbox>
+                                                                </vbox>
+                                                            </groupbox>
+                                                        </hbox>
+                                                    </vbox>
+                                                </tabpanel>
+                                </tabpanels>
+                            </tabbox>
+                        
+                        </center>
+        </borderlayout>
+        
+
+    </window>
+
+</zk>

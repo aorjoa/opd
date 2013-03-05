@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window apply="opd.TransfersearchComposer">
+
+<vbox>
+            <label style="font-size:20px">ค้นหาการส่งตัว</label>
+            <hbox>
+                <label style="font-size:14px">สถานะ : เข้าใช้ระบบ</label>
+                <label style="font-size:14px">[</label>
+                <label id= "logonName" style="font-size:14px"></label>
+                <label style="font-size:14px">]</label>
+                <label id="today" style="font-size:14px"></label>
+                <button id="logout">ออกจากระบบ</button>
+                </hbox>
+            <label></label>
+        <label></label>
+        </vbox>
+        <vbox>
+            <hbox><textbox id="searchText" /> <button id="btnSearch" label="Search" /></hbox>
+            <label></label>
+        </vbox>
+
+        <grid height="150px" width="650px">  
+                        <columns>                
+                            <column label="ชื่อผู้ป่วย" align="center" width="230px" />
+                            <column label="การส่งตัว" align="center"/>
+                            <column label="รายละเอียด" align="center" width="80px" />
+                        </columns>                           
+                            <rows sclass="narrow">
+                                
+                            </rows>         
+                    </grid>
+
+    </window>
+
+</zk>

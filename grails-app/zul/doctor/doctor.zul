@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window apply="opd.DoctorComposer">
+    <style>
+        #tb2{background-color:Orange;}
+        #gb{background-color:Orange;}
+    </style>
+
+<hbox>
+    <hbox>
+        <separator/>
+    <vbox>
+        
+           <hbox>
+            <image src="${z.resource(dir:'images',file:'opd.png')}" width="300px" style="margin-left:50px;"/>
+           
+             <button visible="false" src="${z.resource(dir:'images',file:'pic10-01-01.png')}" id="logoutdoctor" label="Logout" href="/index.zul" style="margin-top:30px;margin-left:100%"/>
+             
+          </hbox>
+                    <tabbox id="tb2" orient="vertical"  style="position:relative;top:10px;">
+                        <tabs width="200px">
+
+                            <tab id="p1" visible="false" label="ข้อมูลผู้ป่วย" src="${z.resource(dir:'images',file:'pic1-01.png')}"/>
+
+                            <tab id="p2" visible="false" label="การแพ้ยา" src="${z.resource(dir:'images',file:'pic2-01.png')}"/>
+                            <tab id="p3" visible="false" label="วินิจฉัย" src="${z.resource(dir:'images',file:'pic3-01.png')}"/>
+                            <tab id="p4" visible="false" label="ใบสั่งยา" src="${z.resource(dir:'images',file:'pic4-01.png')}"/>
+                            <tab id="p5" visible="false" label="ส่งตัว/นัดหมาย" src="${z.resource(dir:'images',file:'pic5-01.png')}"/>
+                            <tab id="gbf" selected="true" label="ข้อมูลแพทย์" src="${z.resource(dir:'images',file:'pic6-01.png')}"/>
+
+                        </tabs>
+
+                        <tabpanels width="900px" height="400px">
+
+
+                            <tabpanel id="s1" style="position:relative;top:30px;left:20px;">
+                                <hbox>
+                                        
+                                        <image src="${z.resource(dir:'images',file:'android1325996082883.png')}" width="300px"/>
+                                     <vbox>
+                                  <grid width="500px">
+                                          <auxhead>
+                                              <auxheader colspan="4" label="ข้อมูลประวัติผู้ป่วย" />
+                                          </auxhead>
+                                          <columns>
+
+                                          </columns>
+                                   
+                                           <rows>
+                                                      <row>
+                                                          <label value="HN : " width="80px"/>
+                                                          <textbox id="phn" mold="rounded" instant="true"/>
+                                                      </row>
+                                                      <row>
+                                                          <label value="เพศ : " width="80px"/>
+                                                          <label id="psex" value="null" />
+                                                      </row>
+
+                                                       <row>
+                                                          <label value="ชื่อ-สกุล : " width="80px"/>
+                                                          <label id="pname" value="null" />
+                                                      </row>
+                                                        <row>
+                                                          <label value="วันเกิด : " width="80px"/>
+                                                          <label  id="pbirth" value="null" />
+                                                      </row>
+                                                        <row>
+                                                          <label value="สิทธิ์การรักษา : " width="80px"/>
+                                                          <label id="pwelfare" value="null" />
+                                                      </row>
+                                                         <row>
+                                                          <label value="อาชีพ : " width="80px"/>
+                                                          <label id="pwork" value="null" />
+                                                      </row>
+                                            </rows>
+                                    </grid>
+                                        <label value="------------------------------------------------------------------------------------------------------------------------------" style="color:red;"/>
+
+                                    <grid width="500px">
+                                          <auxhead>
+                                              <auxheader colspan="4" label="ข้อมูลอาการ" />
+                                          </auxhead>
+                                          <columns>
+                                          </columns>
+                                   
+                                           <rows sclass="narrow">
+                                                      <row>
+                                                          <label value="อาการ : " width="80px"/>
+                                                          <label id="psymptom" value="null" />
+
+                                                      </row>
+                                                       <row>
+                                                          <label value="อุณหภูมิร่างกาย (หน่วย: องศาเซลเซียส) : " width="80px"/>
+                                                          <label id="ptemperature" value="null" />
+                                                      </row>
+                                                        <row>
+                                                          <label value="ส่วนสูง (หน่วย: เซนติเมตร) : " width="80px"/>
+                                                          <label id="pheight" value="null" />
+                                                      </row>
+                                                        <row>
+                                                          <label value="น้ำหนัก (หน่วย: กิโลกรัม) : " width="80px"/>
+                                                          <label id="pweight" value="null" />
+                                                      </row>
+                                                         <row>
+                                                          <label value="BMI : " width="80px"/>
+                                                          <div id="pbmif"><label id="pbmi" value="null"/>
+                                                        </div>
+                                                      </row>
+                                            </rows>
+                                    </grid>
+
+
+                                        <panel title="X'Ray flim" width="100px" border="normal">
+                                            <panelchildren>
+                                                 <image src="${z.resource(dir:'images',file:'x-ray.jpeg')}" width="100px"/>
+                                            </panelchildren>
+                                         </panel>
+                                   
+                             
+
+                                        </vbox>
+
+                                </hbox>
+                            </tabpanel>
+
+
+
+                            <tabpanel id="s2" style="position:relative;top:30px;left:20px;">
+                              <vbox>
+
+                                 <listbox id="box" width="500px" >
+                                          <listhead >
+                                              <listheader label="รายการแพ้ยา" sort="auto" />
+                              
+                                          </listhead>
+                                      <listitem id="aller">
+                                          <listcell>
+                                            <label value="ไม่มีรายการแพ้ยา"/>
+                                          </listcell>
+                                      </listitem>
+                                     
+                                  </listbox>
+                                 <hbox style="color:red;border-style:dashed;border-width:2px;border-color:orange;">
+                                  <checkbox id="readC"/>
+                                  <label value="อ่านแล้ว" style="margin-top:15px;font-size:16px;"/>
+                                </hbox>
+                            </vbox>
+                            </tabpanel>
+
+
+
+                            <tabpanel id="s3" style="position:relative;top:30px;left:20px;">
+
+
+                                <hbox>
+                                    <vbox>
+
+                                      <listbox id="boxdiag" width="800px" style="margin-bottom:15px;">
+                                          <listhead >
+                                            <listheader label="ประวัติอาการ" sort="auto" />
+                                            <listheader label="ประวัติการวินิจฉัย" />
+                                          </listhead>
+                                          <listitem id="ddiag">
+                                          </listitem>
+                                       </listbox>
+
+                                    <textbox id="txtDiagnose" rows="7" Width="500px"/>
+                                         <hbox style="margin-left: auto;margin-right: auto ;vertical-align: middle;margin-top:20px;">
+                                         <button id="btnDiagnoseS" src="${z.resource(dir:'images',file:'save.png')}" label="บันทึก" width="90px" height="40px" style="font-size:18px;"/>
+                   
+                                         <button id="btnDiagnoseC" src="${z.resource(dir:'images',file:'cross.png')}" label="ล้าง" width="90px" height="40px" style="font-size:18px;"/>
+                                         </hbox>
+                                    </vbox>
+
+
+                            </hbox>
+                            </tabpanel>
+
+
+                            <tabpanel id="s4" style="position:relative;top:30px;left:20px;">
+                                <vbox>
+                                    <hbox>
+                                    <label value="รหัสการทำรายการ : "/>
+                                    <label id="preid" value="null" style="color:red;"/>
+                                    </hbox>
+                                          <hbox style="margin-top:15px;">
+                                            <label value="จ่ายยา : " style="color:#F6358A;"/>
+                                            <combobox id="combo" instant="true" autocomplete="false" autodrop="true" mold="rounded" buttonVisible="false"/>
+                                         </hbox>
+                                        <hbox style="margin-bottom:15px;">
+                                           <label value="จำนวน : " style="color:#F6358A;"/>
+                                          <textbox id="qdrug" mold="rounded" width="55px"/>
+                                          <combobox id="cdrug" autodrop="true" mold="rounded" buttonVisible="true" width="80px" value="หน่วย">
+                        
+                                          </combobox>
+                                         </hbox>
+                                         <button id="btnAs" visible="false" label="เพิ่ม"/>
+                                    <label value="รายการยา/เวชภัณฑ์ : "/>
+                                  <listbox id="boxde" width="500px" style="text-align:center;">
+                                          <listhead style="text-align:center;">
+                                              <listheader label="รหัสยา" sort="auto" width="80px"/>
+                                              <listheader label="ชื่อยาและเวชภัณฑ์" sort="auto" />
+                                              <listheader label="จำนวน" sort="auto" width="80px" />
+                                          </listhead>
+                                  
+                                  </listbox>
+
+                                 <button id="slip" src="${z.resource(dir:'images',file:'pic8-01.png')}" label="สั่งจ่าย" width="150px" height="50px" style="margin-top:20px;"/>
+                                </vbox>
+                            </tabpanel>
+
+
+
+            <tabpanel id="s5" style="position:relative;top:30px;left:20px;">
+                                <vbox>
+                                    <hbox>
+                                        <radiogroup id="sendorappoint">
+                                          <radio id="sendp" label="ส่งตัวผู้ป่วย" radiogroup="sendorappoint" checked="true"/>
+                                          <separator/>
+                                          <radio id="appp" label="นัดหมายผู้ป่วย" radiogroup="sendorappoint"/>
+                                        </radiogroup>
+                                    </hbox>
+                                    <separator/>
+                                    <hbox id="as" visible="false">
+                                      <datebox id="db1" cols="12" format="short" mold="rounded" locale="th" />
+                                         <timebox id="tb1" cols="12" format="short" mold="rounded"   locale="th"/>  
+                                                               
+                                    </hbox>
+                                        <label value="ความเห็นแพทย์ : " style="margin-bottom:10px"/>
+                                       <textbox id="txtsendappoint" rows="7" Width="500px"/>
+
+                                 <button id="sd" src="${z.resource(dir:'images',file:'pic7-01.png')}" label="ดำเนินการ" width="150px" height="50px" style="margin-top:20px;"/>
+                                </vbox>
+                            </tabpanel>
+
+
+
+
+
+
+
+                            <tabpanel id="gbl" style="position:relative;top:30px;left:20px;">
+                                    
+                                    <groupbox mold="3d" width="300px" style="margin-left: auto;margin-right: auto ;vertical-align: middle">
+                                          <caption image="${z.resource(dir:'images',file:'key.png')}" label="ระบบยืนยันตัวแพทย์"/>
+                                         <hbox>
+                                          <vbox>
+                                            <label value="ชื่อผู้ใช้งาน:"/>
+                                            <textbox id="duser"/>
+                                              <label value="รหัสผ่าน:"/>
+                                            <textbox id="dpass" type="password"/>
+                                          </vbox>
+            
+                                          <button id="dlogin" image="${z.resource(dir:'images',file:'pic9-01-01.png')}"  label="ลงชื่อเข้าใช้" style="width:110px; height:62px; margin-left:35px;margin-top:15px;"/>
+                                          
+                                        </hbox>
+                                        </groupbox>
+
+                            </tabpanel>
+
+
+                        </tabpanels>
+                    </tabbox>
+        
+    </vbox>
+    </hbox>
+</hbox>
+
+
+    </window>
+
+</zk>

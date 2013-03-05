@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window apply="opd.EditNurseComposer" visible="true">
+        <vbox>
+            <label style="font-size:20px">ระบบลงทะเบียนผู้ป่วยนอก</label>
+            <label style="font-size:20px">จัดการข้อมูลพยาบาล</label>
+            <hbox>
+                <label style="font-size:14px">สถานะ  : เข้าใข้ระบบ</label>
+                <label id="logonName" style="font-size:14px"></label>
+                <label id="today" style="font-size:14px"></label>
+                <button id="logout">ออกจากระบบ</button>
+            </hbox>
+            <label></label>
+            <label></label>
+            <label style="font-size:20px">แก้ไขข้อมูลพยาบาล</label>
+            <label></label>
+            <label></label>
+            <hbox><label>Username : </label> <textbox id="username" disabled="true" readonly="true"/></hbox>
+            <hbox><label>Password : </label> <textbox id="password" type="password"/></hbox>
+            <hbox><label>Firstname : </label> <textbox id="firstname" /></hbox>
+            <hbox><label>Lastname : </label> <textbox id="lastname" /></hbox>
+            <button id="save">Save</button>
+        </vbox>
+    </window>
+
+</zk>

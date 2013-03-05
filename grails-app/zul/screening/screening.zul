@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window apply="opd.ScreeningComposer" visible="false">
+
+    
+
+<borderlayout height="600px">
+    <north size="90px" splittable="false" collapsible="false" border="0px" >
+        <borderlayout >
+            <center  border="0px">
+
+               <vbox width="1333px"  height="800px" align="center"  >
+               <separator/>
+                
+                <groupbox width="1100px">
+                <hbox align="center" >
+                    ชื่อ - สกุล 
+                    <label id="labname"  width="200px" height="20px"/>
+                <separator/>
+                    อายุ
+                    <label id="labage"  width="100px"  height="20px"/>
+                <separator/>
+                    IDcard <label id="labidcard"  width="150px"  height="20px"/>
+                <separator/>
+                    <button  id="btnsearch" label="ค้นหา" image="${z.resource(dir:'images', file:'Search_32.png')}" orient="vertical" width="100px"  height="55px"/>
+              <!--   <separator/> 
+                    <button id="btndelete" label="ลบ" image="${z.resource(dir:'images', file:'Delete-icon.png')}" orient="vertical" width="100px"  height="55px"/> -->
+               <separator/> 
+                    <button id="btnsaveall" label="บันทึก" image="${z.resource(dir:'images', file:'save2.png')}" orient="vertical" width="100px"  height="55px"/>
+               
+               <separator/> 
+                    <button id="logout" label="ออก" image="${z.resource(dir:'images', file:'exit.png')}" orient="vertical" width="100px"  height="55px"/>
+                </hbox>
+                </groupbox  >
+                </vbox>
+            </center>
+        </borderlayout>
+    </north>
+    <center border="0"  >
+        <borderlayout  >
+
+            <center>
+
+                <vbox width="1333px"  align="center" >
+                <separator/>
+                <groupbox width="1100px">
+                <hbox align="center" >
+                        <tabbox width="1090px">
+                            <tabs>
+                                <tab label="การประเมิน/ซักประวัติ" closable="false" />
+                               <!--  <tab label="ER"             closable="false" /> -->
+                            </tabs>
+                                
+                            <tabpanels height="450px" >
+                                <tabpanel width="1098px">
+                                <hbox width="640px">
+                                        <vbox height="600px">
+                                            <grid fixedLayout="true" width="640px">
+                                                <columns>
+                                                <column  width="120px"  align="Right"/>
+                                                <column  width="140px "  align="Left"/>
+                                                <column  width="120px"  align="Right"/>
+                                                <column  width="140px "  align="Left"/>
+                                                <column  width="120px"  align="center"/>
+
+                                                </columns>
+                                                <rows>
+                                                    <row id="1"> น้ำหนัก: <box orient="horizontal">
+                                                            <textbox id="txtweight"  width="40px" />  Kg
+                                                                                                           
+                                                            </box> 
+                                                            ส่วนสูง:
+                                                            <box orient="horizontal">
+                                                             <textbox id="txtheight" width="40px"/>Cm.
+                                                             </box> 
+                                                        </row>
+                                                    <row id="2"> อัตราการเต้นชีพจร: <box orient="horizontal">
+                                                            <textbox id="txtheartrate"  width="40px" />/m 
+                                                                                                                 
+                                                            </box>
+                                                             อุณหภูมิ :
+                                                            <box orient="horizontal">
+                                                            <textbox id="txttemperature" width="40px"/>/m
+                                                             </box>
+                                                            <!--  <box orient="horizontal">
+                                            control slas
+                                                             </box> -->
+                                                        </row>
+                                                    <row id ="3"> ความดันโลหิต:  <box orient="horizontal"> 
+                                                            <textbox id="txtlbloodpressure" width="30px"/>/
+                                                            <textbox id="txthbloodpressure" width="30px"/> 
+                                                            </box>
+
+                                                            อัตราการหายใจ :
+                                                            <box orient="horizontal">
+                                                            <textbox id="txtrespiratoryrate" width="40px"/>C
+                                                             </box>
+
+                                                        </row>
+
+                                                    <row id="4"> <!-- เป็นมาแล้ว: <box orient="horizontal">
+                                                            <textbox width="30px"/> 
+                                                            <combobox width="70px">
+                                                                <comboitem label="ชม."/>
+                                                                <comboitem label="วัน"/>
+                                                                <comboitem label="สัปดาห์"/>
+                                                                <comboitem label="เดือน"/>
+                                                            </combobox>
+                                                            </box> -->
+                                                             BMI:
+                                                            <box orient="horizontal">
+                                                            <textbox id="txtbmi" width="40px"/>C
+                                                             </box>
+                                                        </row>
+                                                    <row id="5">
+                                                        
+                                                    </row>
+                                            </rows>
+
+                                          </grid>
+                                    <hbox>
+                                        <vbox>
+                                        <box orient="horizontal">
+                                            <label value="อาการเบื้องต้น "/>
+                                            <!-- <textbox  width="570px"/> -->
+                                        </box>
+                                        <textbox id="txtdescription" disabled="true" width="635px" rows="17" />
+                                        <box orient="horizontal">
+                                           <!--  โรคประจำตัว 
+                                            <textbox id="" width="570px"   value="ปฏิเสธ" rows="7"/> -->
+                                        </box>
+                                      <!--  <box orient="horizontal">
+                                            <vbox>
+                                            เหตุผลการปรึกษา
+                                                <hbox>
+                                                <button label="" image="${z.resource(dir:'images', file:'Scanner.png')}" orient="vertical" width="45px"  height="35px"/>
+                                                <button label="" image="${z.resource(dir:'images', file:'Report.png')}" orient="vertical" width="45px"  height="35px"/>
+                                                </hbox>
+                                            </vbox>
+                                            <textbox  width="538px" rows="5" value=""/>
+                                            </box> -->
+                                        </vbox>
+                                    </hbox>
+                                        </vbox>
+                                        <separator width="5px"/>
+                                    <hbox width="500px">
+                                    <vbox>
+                                    <groupbox id="Patient" width="430px"  >
+                                        <vbox height="170px">
+                                            <hbox >
+                                                <box width="159px" height="159px" style="background:#777" >
+                                                     <image src="${z.resource(dir:'images', file:'Male.jpg')}"/>
+                                                </box>
+
+                                               
+                                                <vbox width="80px" align="right">
+                                                    <separator/>
+                                                    <vbox height="24px" align="center">
+                                                     IDcard
+                                                     </vbox>
+                                               
+                                                  <vbox height="21px" align="center">
+                                                    ชื่อ - นามสุกุล 
+                                                    </vbox>
+                                                    
+                                                   <vbox height="23px" align="center">
+                                                     เพศ
+                                                     </vbox>
+                                                     <vbox height="23px" align="center">
+                                                    เชื่อชาติ
+                                                     </vbox>
+                                                      <vbox height="23px" align="center">
+                                                   ศาสนา
+                                                     </vbox>
+                                                     
+                                                </vbox>
+                                                <vbox>
+                                                    <separator/>
+                                                    <textbox id="idcard" width="150px" disabled="true" value="---"/>
+                                                    <textbox id="name" width="150px" disabled="true" value="---" />
+                                                    <textbox id="sex" width="150px" disabled="true" value="---" />
+                                                    <textbox id="race" width="150px" disabled="true" value="---" />
+                                                    <textbox id="religion" width="150px" disabled="true" value="---" />
+                                                </vbox>
+
+                                            </hbox>
+
+                                        </vbox>
+                                        </groupbox >
+
+                                        <groupbox id="Doctor" width="430px" >
+                                        <vbox height="170px">
+                                            <hbox >
+                                                <box width="159px" height="159px" style="background:#777" >
+                                                     <image src="${z.resource(dir:'images', file:'Doctor.jpg')}"/>
+                                                </box>
+
+                                               
+                                                <vbox width="80px" align="right">
+                                                    <separator/>
+                                                    <vbox height="24px" align="center">
+                                                     ID
+                                                     </vbox>
+                                               
+                                                  <vbox height="21px" align="center">
+                                                    ชื่อ - นามสุกุล 
+                                                    </vbox>
+                                                    
+                                                   <vbox height="23px" align="center">
+                                                     ตำแหน่ง
+                                                     </vbox>
+                                                     <vbox height="20px" align="center">
+                                                    แผนก
+                                                     </vbox>
+                                                      <vbox height="21px" align="center">
+                                                   ห้อง
+                                                     </vbox>
+                                                       <vbox height="20px" align="center">
+                                                   มือถือ
+                                                     </vbox>
+                                                  <!--    <vbox height="21px" align="center">
+                                                   ,มือถือ
+                                                     </vbox> -->
+                                                     
+                                                </vbox>
+                                                <vbox>
+                                                    <separator/>
+                                                    <textbox id="iddoctor" width="150px" disabled="true" value="---"/>
+                                                    <textbox id="namedoctor" width="150px" disabled="true" value="---" />
+                                                    <textbox id="status" width="150px" disabled="true" value="---" />
+                                                    <textbox id="section" width="150px" disabled="true" value="---" />
+                                                    <textbox id="room" width="150px" disabled="true" value="---" />
+                                                    <textbox id="tel" width="150px" disabled="true" value="---" />
+                                                    <!-- <textbox  width="150px" disabled="true" value="0899876545" /> -->
+                                                </vbox>
+
+                                            </hbox>
+
+                                        </vbox>
+                                        </groupbox >
+                                        <groupbox width="430">
+                                            <hbox>
+                                                <separator/>
+                                                <combobox id="comdoctor" width="200px" height="30px" >
+                                                                <!-- <comboitem label="นายแพทย์AAAA"/>
+                                                                <comboitem label="วัน"/>
+                                                                <comboitem label="สัปดาห์"/>
+                                                                <comboitem label="เดือน"/> -->
+                                                            </combobox>
+                                                <!-- <button id="txtdoctor" label="เลือกแพทย์" width="80px"  height="30px"/> -->
+                                                <separator/>
+                                                <button id="seldoctor" label="เลือก" width="80px"  height="30px"/>
+                                                <separator/>
+                                                <!-- <button label="คิว" width="80px"  height="30px"/> -->
+                                            </hbox>
+                                        </groupbox>
+                                        </vbox>
+                                    </hbox>
+                                </hbox>
+                                </tabpanel>
+                                <!-- <tabpanel width="1098px" >
+                                <vbox align="left">
+                                    <groupbox width="1030px">
+                                        <hbox >
+                                        <vbox>
+                                            <hbox>
+                                                <window title="เลือกประเภทการเจ็บป่วย" zclass="z-window-popup" border="normal" width="250px">
+                                                    <hbox>
+                                                            <radiogroup >
+                                                                <radio label="อุบัติเหตุ" />
+                                                                
+                                                                <radio label="ทั่วไป" />
+                                                            </radiogroup>
+                                                           
+                                                    </hbox>
+                                                </window>
+                                                <separator/>
+                                                <vbox>
+                                                    <separator/>
+                                                    เวลาที่มาถึง ER 
+                                                </vbox>
+                                                <vbox>
+                                                <separator/>
+                                                    <timebox id="tb0" format="hh:mm"/>
+
+                                                </vbox>
+                                                 <separator />
+                                                 <window title="CPR" zclass="z-window-popup" border="normal" width="250px">
+                                                     <hbox>
+                                                        <checkbox id="CPR"   label="PCRนาที"  />
+                                                        <separator width="50px"/>
+                                                        <checkbox id="Dead"   label="ตาย(เวลา)"  />
+                                                        
+                                                    </hbox>
+                                                </window>
+                                            </hbox>
+                                        <window title="ประเภทผู้ป่วย" zclass="z-window-popup" border="normal" width="500px">
+                                            <hbox>
+                                                <checkbox id="Trauma"               label="Trauma" />
+                                                <separator width="10px"/>
+                                                <checkbox id="Non Trauma"           label="Non Trauma"  />
+                                                <separator width="10px"/>
+                                                <checkbox id="BBA"                  label="BBA"  />
+                                                <separator width="10px"/>
+                                                <checkbox id="DBA"                  label="DBA"  />
+                                                <separator width="10px"/>
+                                                <checkbox id="จิตเวช"                 label="จิตเวช" />
+                                                <separator width="10px"/>
+                                                <checkbox id="Revisit in 48 Hr."    label="Revisit in 48 Hr." />
+                                            </hbox>
+                                        </window>
+                                         <window title="ความเร่งด่วน" zclass="z-window-popup" border="normal" width="650px">
+                                            <hbox>
+                                                <checkbox id="Emergency"    label="ฉุกเฉิน(Emergency)" />
+                                                <separator width="10px"/>
+                                                <checkbox id="Urgency"     label="รีบด่วน(Urgency)"  />
+                                                <separator width="10px"/>
+                                                <checkbox id="Non_Emergency"  label="ไม่รีบด่วน(Non Emergency)"  />
+                                                <separator width="10px"/>
+                                                <checkbox id="Orther"         label="อื่นๆ" />
+                                             
+                                            </hbox>
+                                            </window>
+                                        <window title="ประเภทอุบัติเหตุ" zclass="z-window-popup" border="normal" width="700px">
+                                            <hbox>
+                                                <checkbox id="Factory"    label="โรงงาน"/>
+                                                <separator width="10px"/>
+                                                <checkbox id="General"     label="ทั่วไป"  />
+                                                <separator width="10px"/>
+                                                <checkbox id="TrafficCar"  label="จราจร(รถยนต์)"  />
+                                                <separator width="10px"/>
+                                                <checkbox id="TrafficMotor"         label="จราจร(จักรยาน/จักรยานยนต์)"  />
+                                                <separator width="10px"/>
+                                                <checkbox id="TrafficWalk"  label="จราจรเดินถนน"/>
+                                                <separator width="10px"/>
+                                                <checkbox id="Unknown"         label="อื่นๆ/ไม่ทราบ"/>
+                                            </hbox>
+                                        </window>
+
+                                        <separator width="300px"/>
+                                          
+                                          <window title="Coma Score" zclass="z-window-popup" border="normal" width="800px">
+                                            <hbox>
+                                                Glasgow coma score E=
+                                                <doublebox id="E" width="35px"/>
+                                                <separator width="10px"/>
+                                                V=
+                                                <doublebox id="V" width="35px"/>
+                                                <separator width="10px"/>
+                                                M=
+                                                <doublebox id="M" width="35px"/>
+                                                <separator width="10px"/>
+                                                PupilsLt.=
+                                                <doublebox id="P" width="35px"/>mm.
+                                                <separator width="10px"/>
+                                                ,Rt
+                                                <doublebox id="R" width="35px"/>mm.
+                                            </hbox>
+                                        </window>
+
+                                        </vbox>
+                                        
+                                        
+                                        </hbox>
+                                    </groupbox>
+                                </vbox>
+
+
+
+                                </tabpanel> -->
+                                
+                            </tabpanels>
+                        </tabbox>
+
+                   
+
+                    
+                </hbox>
+                </groupbox  >
+                </vbox>
+
+            </center>
+
+           
+        </borderlayout>
+    </center>
+</borderlayout>
+
+
+    </window>
+
+</zk>

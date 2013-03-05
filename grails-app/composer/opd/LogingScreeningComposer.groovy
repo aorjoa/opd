@@ -1,0 +1,26 @@
+package opd
+
+import org.zkoss.zk.grails.composer.*
+
+import org.zkoss.zk.ui.select.annotation.Wire
+import org.zkoss.zk.ui.select.annotation.Listen
+
+class LogingScreeningComposer extends GrailsComposer {
+
+    def afterCompose = { window ->
+         if (session['user'])
+			redirect(uri:'/screening/searchInScreening.zul')
+		else {
+			window.visible = true
+			
+	        $("#login").on("click", {
+
+	        	def user = Nurse.findByUserAndPassword($("#username").val(), $("#password").val())
+	        	if (user) {
+	        		session.user = user
+	        		redirect(uri:'/screening/searchInScreening.zul')
+	        	} else alert("ไม่ถูกต้อง")
+	        })
+        }
+    }
+}
